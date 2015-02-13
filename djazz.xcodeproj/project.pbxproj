@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */; };
-		D3BF03A61A8E744400BF0D56 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A51A8E744400BF0D56 /* FirstViewController.swift */; };
-		D3BF03A81A8E744400BF0D56 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A71A8E744400BF0D56 /* SecondViewController.swift */; };
+		D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */; };
+		D3BF03A81A8E744400BF0D56 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A71A8E744400BF0D56 /* EventsViewController.swift */; };
 		D3BF03AB1A8E744400BF0D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03A91A8E744400BF0D56 /* Main.storyboard */; };
 		D3BF03AD1A8E744400BF0D56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03AC1A8E744400BF0D56 /* Images.xcassets */; };
 		D3BF03B01A8E744400BF0D56 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03AE1A8E744400BF0D56 /* LaunchScreen.xib */; };
@@ -30,8 +30,8 @@
 		D3BF039E1A8E744400BF0D56 /* djazz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djazz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BF03A21A8E744400BF0D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3BF03A51A8E744400BF0D56 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D3BF03A71A8E744400BF0D56 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3BF03A71A8E744400BF0D56 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		D3BF03AA1A8E744400BF0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3BF03AC1A8E744400BF0D56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3BF03AF1A8E744400BF0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */,
-				D3BF03A51A8E744400BF0D56 /* FirstViewController.swift */,
-				D3BF03A71A8E744400BF0D56 /* SecondViewController.swift */,
+				D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */,
+				D3BF03A71A8E744400BF0D56 /* EventsViewController.swift */,
 				D3BF03A91A8E744400BF0D56 /* Main.storyboard */,
 				D3BF03AC1A8E744400BF0D56 /* Images.xcassets */,
 				D3BF03AE1A8E744400BF0D56 /* LaunchScreen.xib */,
@@ -215,9 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BF03A81A8E744400BF0D56 /* SecondViewController.swift in Sources */,
+				D3BF03A81A8E744400BF0D56 /* EventsViewController.swift in Sources */,
 				D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */,
-				D3BF03A61A8E744400BF0D56 /* FirstViewController.swift in Sources */,
+				D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +409,7 @@
 				D3BF03C11A8E744400BF0D56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3BF03C21A8E744400BF0D56 /* Build configuration list for PBXNativeTarget "djazzTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				D3BF03C41A8E744400BF0D56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

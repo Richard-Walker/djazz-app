@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  EventsViewController.swift
 //  djazz
 //
 //  Created by Richard Walker on 13/02/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class EventsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
