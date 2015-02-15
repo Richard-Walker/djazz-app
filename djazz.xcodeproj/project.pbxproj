@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D38D34FA1A90F3FC00BF47B9 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */; };
+		D38D34FC1A90FB0200BF47B9 /* EventsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34FB1A90FB0200BF47B9 /* EventsTableCell.swift */; };
 		D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */; };
 		D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */; };
-		D3BF03A81A8E744400BF0D56 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A71A8E744400BF0D56 /* EventsViewController.swift */; };
 		D3BF03AB1A8E744400BF0D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03A91A8E744400BF0D56 /* Main.storyboard */; };
 		D3BF03AD1A8E744400BF0D56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03AC1A8E744400BF0D56 /* Images.xcassets */; };
 		D3BF03B01A8E744400BF0D56 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03AE1A8E744400BF0D56 /* LaunchScreen.xib */; };
@@ -27,11 +28,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		D38D34FB1A90FB0200BF47B9 /* EventsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableCell.swift; sourceTree = "<group>"; };
 		D3BF039E1A8E744400BF0D56 /* djazz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djazz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BF03A21A8E744400BF0D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		D3BF03A71A8E744400BF0D56 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		D3BF03AA1A8E744400BF0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3BF03AC1A8E744400BF0D56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D3BF03AF1A8E744400BF0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,9 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */,
+				D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */,
 				D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */,
-				D3BF03A71A8E744400BF0D56 /* EventsViewController.swift */,
 				D3BF03A91A8E744400BF0D56 /* Main.storyboard */,
+				D38D34FB1A90FB0200BF47B9 /* EventsTableCell.swift */,
 				D3BF03AC1A8E744400BF0D56 /* Images.xcassets */,
 				D3BF03AE1A8E744400BF0D56 /* LaunchScreen.xib */,
 				D3BF03A11A8E744400BF0D56 /* Supporting Files */,
@@ -215,9 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BF03A81A8E744400BF0D56 /* EventsViewController.swift in Sources */,
 				D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */,
+				D38D34FC1A90FB0200BF47B9 /* EventsTableCell.swift in Sources */,
 				D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */,
+				D38D34FA1A90F3FC00BF47B9 /* EventsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
