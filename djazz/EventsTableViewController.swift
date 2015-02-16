@@ -9,8 +9,18 @@
 import UIKit
 
 class EventsTableViewController: UITableViewController {
-    let eventNames = ["Wake-up breeze", "Atomic warning", "Super cool event"]
-    let eventTimes = ["07:30", "09:30", "16:45"]
+    
+    var eventList: [DZEvent] = []
+    
+    func loadEvents() -> [DZEvent] {
+        var list: [DZEvent] = [
+            DZEvent(name: "Réveil matin"),
+            DZEvent(name: "Moning breeze"),
+            DZEvent(name: "Hello world"),
+            DZEvent(name: "K2000 turbo boost")
+        ]
+        return list
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +31,11 @@ class EventsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        // Trick to not display empty cells
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        // Initialization of the event list
+        self.eventList = loadEvents()
         
     }
 
@@ -40,31 +55,25 @@ class EventsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return eventNames.count
+        return eventList.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventCellPrototype", forIndexPath: indexPath) as EventsTableCell
-
-        // Configure the cell...
         
-        cell.eventNameLabel.text = eventNames[indexPath.row]
-        cell.eventTimeLabel.text = eventTimes[indexPath.row]
-        cell.eventProgressView.progress = 0
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCellPrototype", forIndexPath: indexPath) as EventCell
         
-        if indexPath.row == 0 {
-            cell.eventProgressView.progress = 0.6
-            cell.eventTimeLabel.hidden = true
-            cell.eventEditButton.hidden = true
-            cell.eventSwitch.hidden = true
-            cell.eventStopButton.hidden = false
-            cell.eventActivityIndicator.startAnimating()
-            
-        }
+        cell.updateCellContent(eventList[indexPath.row])
 
         return cell
-    }    
+    }
+    
+    
+    @IBAction func unwindToEventList(seague: UIStoryboardSegue) {
+
+    }
+
+    
 
     /*
     // Override to support conditional editing of the table view.
