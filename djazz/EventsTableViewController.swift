@@ -7,74 +7,185 @@
 //
 
 import UIKit
+import Alamofire
 
-class EventsTableViewController: UITableViewController {
+class EventsTableViewController: UITableViewController, UITableViewDataSource, EventCellDelegate, EventsModelDelegate {
     
-    var eventList: [DZEvent] = []
     
-    func loadEvents() -> [DZEvent] {
-        var list: [DZEvent] = [
-            DZEvent(name: "Réveil matin"),
-            DZEvent(name: "Moning breeze"),
-            DZEvent(name: "Hello world"),
-            DZEvent(name: "K2000 turbo boost")
-        ]
-        return list
+    
+    // MARK: - Properties -------------------------------------------------------------------
+    
+    /// The model of this view: a list of JSON events
+    var events = Events()
+    
+    
+    
+    // MARK: - Protocol EventsModelDelegate -------------------------------------------------------------------
+    
+    func eventHapenned(event: Event) {
+        // An event has been triggered, we refresh the corresponding row in the view
+        self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: event.index!, inSection: 0)], withRowAnimation: .None)
     }
+    
+    func networkErrorOccurred(message:String, error: NSError) {
+        // A network error has occurred, we display a popup in the current view to inform the user
+        self.error(error, message: message)
+    }
+    
+    
+    
+    // MARK: - View notifications -------------------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // Wire deleguates
+        events.delegate = self
         
         // Trick to not display empty cells
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
-        // Initialization of the event list
-        self.eventList = loadEvents()
+        // Load events and refresh view when done
+        events.load { self.tableView!.reloadData() }
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
+    
+    
+    // MARK: - Table view data source -------------------------------------------------------------------
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return eventList.count
+        return events.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        // get event from model
+        let event = events[indexPath.row]
+
+        // detach cell
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCellPrototype", forIndexPath: indexPath) as EventCell
         
-        cell.updateCellContent(eventList[indexPath.row])
-
+        // render cell according to model
+        cell.nameLabel.text = event.title
+        cell.toggle.on = event.enabled
+        cell.timeLabelButton.setTitle(event.time.timePart, forState: .Normal)
+        cell.progressView.progress = 0
+        cell.active = event.enabled
+        cell.rowIndex = indexPath.row
+        cell.deleguate = self
+        
         return cell
     }
-    
-    
-    @IBAction func unwindToEventList(seague: UIStoryboardSegue) {
 
+    
+    
+    // MARK: - Protocol EventCellDeleguate -------------------------------------------------------------------
+    
+    func eventActivated(cell: EventCell) {
+
+        // get event from model
+        var event = events[cell.rowIndex]
+        
+        // define updates
+        let updates = [ "enabled" : true, "time" : NSDate.nextOccurenceOf(event.time.timePart) ]
+        
+        // update model and adapt the view when done
+        // TODO: try by re-disabling button first and not using error callback
+        event.update(updates,
+            {
+                cell.active = true
+            } ,
+            errorCallback: {
+                cell.active = false
+            }
+        )
+    }
+    
+    func eventDeactivated(cell: EventCell) {
+
+        // get event from model
+        var event = events[cell.rowIndex]
+        
+        // define updates
+        let updates = [ "enabled" : false ]
+        
+        // update model and adapt the view when done
+        // TODO: try by re-enabling button first and not using error callback
+        event.update(updates,
+            {
+                cell.active = false
+            } ,
+            errorCallback: {
+                cell.active = true
+            }
+        )
+        
     }
 
     
+    
+    // MARK: - Navigation -------------------------------------------------------------------
+    
+    @IBAction func unwindToEventList(seague: UIStoryboardSegue) {
+        
+        if let source = seague.sourceViewController as? EditEventViewController {
+            if source.chosenTime != nil {
 
+                // get cell
+                var cell = source.eventCell!
+                
+                // get event from model
+                var event = events[cell.rowIndex]
+                
+                // define updates
+                let updates = [ "time" : NSDate.nextOccurenceOf(source.chosenTime!) ]
+                
+                // update model and adapt the view when done
+                // TODO: try by re-enabling button first and not using error callback
+                event.update(updates) {
+                    cell.timeLabelButton.setTitle(source.chosenTime, forState: .Normal)
+                }
+
+            }
+            
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // If destination is edit event, pass the cell to be edited to the new controller
+        if let destination = segue.destinationViewController as? EditEventViewController {
+            if let cell = (sender as? UIView)?.superview?.superview? as? EventCell {
+                destination.eventCell = cell
+            } else {
+                self.alert("Error", message: "Could not find the cell object to update", buttonText: "Ok")
+            }
+        }
+    
+    }
+
+
+    
+    // MARK: - Commented xcode boiler plate code -------------------------------------------------------------------
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -110,14 +221,5 @@ class EventsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

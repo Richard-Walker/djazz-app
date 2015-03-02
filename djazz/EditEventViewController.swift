@@ -10,10 +10,19 @@ import UIKit
 
 class EditEventViewController: UIViewController {
 
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var eventNameLabel: UILabel!
+    
+    var chosenTime: String?
+    var eventCell: EventCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let time = NSDate.dateFromTime(eventCell?.timeLabelButton.titleLabel?.text)
+        if time != nil { datePicker.date = time! }
+        eventNameLabel?.text = eventCell?.nameLabel.text
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +31,15 @@ class EditEventViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if sender as UIBarButtonItem == saveButton {
+            chosenTime = self.datePicker.date.timePart
+        }
     }
-    */
 
 }

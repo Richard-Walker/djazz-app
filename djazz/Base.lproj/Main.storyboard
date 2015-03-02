@@ -89,7 +89,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLC-re-zIB">
-                                            <rect key="frame" x="103" y="30" width="30" height="53"/>
+                                            <rect key="frame" x="103" y="31" width="30" height="53"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                             <state key="normal" title="ˑ">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,15 +98,6 @@
                                                 <segue destination="G4c-Ro-GQ0" kind="modal" id="2DH-eJ-5MH"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMa-bL-uaq">
-                                            <rect key="frame" x="15" y="36" width="88" height="41.5"/>
-                                            <gestureRecognizers/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
-                                            <nil key="highlightedColor"/>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="Z9S-gt-0zz" appends="YES" id="flP-kA-9Z9"/>
-                                            </connections>
-                                        </label>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.20000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="oan-BV-ofP">
                                             <rect key="frame" x="0.0" y="79" width="320" height="2.5"/>
                                         </progressView>
@@ -122,21 +113,35 @@
                                                 <action selector="updateCellStatus:" destination="mAs-3o-crz" eventType="valueChanged" id="ku8-Gy-lze"/>
                                             </connections>
                                         </switch>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-Qk-2Yj">
+                                            <rect key="frame" x="15" y="37" width="88" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="7Dl-7Y-NWT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
+                                            <state key="normal" title="00:00">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="G4c-Ro-GQ0" kind="modal" id="Hl9-MG-hIV"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="Fvs-zy-uWx" firstAttribute="centerY" secondItem="Are-TZ-6HG" secondAttribute="centerY" id="1y6-Nz-VEB"/>
-                                        <constraint firstItem="XLC-re-zIB" firstAttribute="leading" secondItem="eMa-bL-uaq" secondAttribute="trailing" id="8hl-i5-bnc"/>
+                                        <constraint firstItem="XLC-re-zIB" firstAttribute="leading" secondItem="WKU-Qk-2Yj" secondAttribute="trailing" id="96A-ax-FO8"/>
+                                        <constraint firstAttribute="bottom" secondItem="WKU-Qk-2Yj" secondAttribute="bottom" constant="10" id="HAS-9B-5p5"/>
                                         <constraint firstItem="oan-BV-ofP" firstAttribute="leading" secondItem="Vhz-NV-Xzx" secondAttribute="leading" id="KTs-a6-1qk"/>
                                         <constraint firstAttribute="centerY" secondItem="Are-TZ-6HG" secondAttribute="centerY" id="PZQ-Uk-Ffn"/>
                                         <constraint firstItem="tzV-qU-EKj" firstAttribute="top" secondItem="Vhz-NV-Xzx" secondAttribute="top" constant="10" id="Pih-1f-LER"/>
                                         <constraint firstAttribute="bottom" secondItem="oan-BV-ofP" secondAttribute="bottom" constant="7" id="fp2-2r-ee8"/>
+                                        <constraint firstItem="WKU-Qk-2Yj" firstAttribute="centerY" secondItem="XLC-re-zIB" secondAttribute="centerY" id="jvw-XF-pMh"/>
                                         <constraint firstItem="tzV-qU-EKj" firstAttribute="leading" secondItem="Vhz-NV-Xzx" secondAttribute="leading" constant="15" id="k8K-Kj-w7J"/>
                                         <constraint firstItem="Fvs-zy-uWx" firstAttribute="centerX" secondItem="Are-TZ-6HG" secondAttribute="centerX" id="ldP-L8-YCa"/>
-                                        <constraint firstItem="eMa-bL-uaq" firstAttribute="centerY" secondItem="XLC-re-zIB" secondAttribute="centerY" id="non-oC-v7S"/>
+                                        <constraint firstItem="WKU-Qk-2Yj" firstAttribute="leading" secondItem="Vhz-NV-Xzx" secondAttribute="leading" constant="15" id="ldv-VM-JqY"/>
                                         <constraint firstAttribute="trailing" secondItem="Are-TZ-6HG" secondAttribute="trailing" constant="15" id="ttv-mv-GFn"/>
                                         <constraint firstAttribute="trailing" secondItem="oan-BV-ofP" secondAttribute="trailing" id="w8u-Yu-M0U"/>
-                                        <constraint firstAttribute="bottom" secondItem="eMa-bL-uaq" secondAttribute="bottom" constant="10" id="wEi-Q3-xlg"/>
-                                        <constraint firstItem="eMa-bL-uaq" firstAttribute="leading" secondItem="Vhz-NV-Xzx" secondAttribute="leading" constant="15" id="yA0-cc-go4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,7 +151,7 @@
                                     <outlet property="nameLabel" destination="tzV-qU-EKj" id="Xjv-tl-2xS"/>
                                     <outlet property="progressView" destination="oan-BV-ofP" id="Z9J-qg-Skf"/>
                                     <outlet property="stopButton" destination="Fvs-zy-uWx" id="6cc-Fl-Otq"/>
-                                    <outlet property="timeLabel" destination="eMa-bL-uaq" id="yIX-g6-W6H"/>
+                                    <outlet property="timeLabelButton" destination="WKU-Qk-2Yj" id="xuQ-oc-etM"/>
                                     <outlet property="toggle" destination="Are-TZ-6HG" id="rq2-Lk-Jv5"/>
                                 </connections>
                             </tableViewCell>
@@ -156,16 +161,11 @@
                             <outlet property="delegate" destination="J6V-1x-ZI2" id="tXw-WW-sUh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="Llb-vf-lOM"/>
+                    <navigationItem key="navigationItem" title="Timetable" id="Llb-vf-lOM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAf-dw-KOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Z9S-gt-0zz">
-                    <connections>
-                        <segue destination="G4c-Ro-GQ0" kind="modal" id="VYL-HL-qxv"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="838" y="566"/>
+            <point key="canvasLocation" x="838" y="565"/>
         </scene>
         <!--Edit Event View Controller-->
         <scene sceneID="ZsG-uF-I2y">
@@ -182,7 +182,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eb-xF-TFn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eW-F9-jqd">
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eW-F9-jqd">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <items>
                                             <navigationItem title="Set Time" id="n4c-ke-2ds">
@@ -202,6 +202,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9eW-F9-jqd" secondAttribute="trailing" id="N5f-3a-Ge7"/>
+                                    <constraint firstAttribute="bottom" secondItem="9eW-F9-jqd" secondAttribute="bottom" id="Rio-X6-XID"/>
+                                    <constraint firstItem="9eW-F9-jqd" firstAttribute="leading" secondItem="4eb-xF-TFn" secondAttribute="leading" id="bAK-5P-Fv6"/>
                                     <constraint firstAttribute="height" constant="72" id="dYj-do-u04"/>
                                 </constraints>
                             </view>
@@ -234,6 +237,11 @@
                             <constraint firstItem="4eb-xF-TFn" firstAttribute="width" secondItem="EAi-kK-NWY" secondAttribute="width" id="wXc-Fu-pb5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="whM-nR-zHB" id="SQs-TM-Air"/>
+                        <outlet property="eventNameLabel" destination="DfB-Kk-9rE" id="1Bu-8G-cTQ"/>
+                        <outlet property="saveButton" destination="lcz-Es-U55" id="aPZ-0Q-bK3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOC-ZC-DAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hYW-Pr-LPD" userLabel="Exit" sceneMemberID="exit"/>
@@ -244,7 +252,7 @@
         <scene sceneID="X0x-dN-58v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y0C-XG-NJ0" userLabel="Events Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="clock" badgeValue="3" id="SgN-Ku-paU"/>
+                    <tabBarItem key="tabBarItem" title="Timetable" image="clock" badgeValue="3" id="SgN-Ku-paU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oxq-fY-WdA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -272,6 +280,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2DH-eJ-5MH"/>
+        <segue reference="Hl9-MG-hIV"/>
     </inferredMetricsTieBreakers>
 </document>
