@@ -125,10 +125,10 @@ class Events {
                 for json in JSON(data!)["_items"].arrayValue {
                     // We cannot use subscripts directly in the event initializer because of a bug in xcode (complie error)
                     let id = json["_id"].stringValue
-                    let name = json["id"].stringValue
+                    let name = json["name"].stringValue
                     let enabled = json["enabled"].boolValue
                     let time = NSDate.parse(json["time"].stringValue)!
-                    let title = json["name"].stringValue
+                    let title = json["title"].stringValue
                     var e = Event(id, name, enabled, time, title, delegate: self.delegate)
                     self.append(e)
                 }
