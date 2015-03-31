@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D305C7531AC9627B00B95990 /* LivingRoomLightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305C7521AC9627B00B95990 /* LivingRoomLightsController.swift */; };
+		D305C7581AC9651000B95990 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305C7571AC9651000B95990 /* Light.swift */; };
 		D30DB3A11AA35A12008F8548 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DB3A01AA35A12008F8548 /* EditEventViewController.swift */; };
 		D310AB641AA24EEF003AC370 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D310AB5D1AA24C0D003AC370 /* Alamofire.framework */; };
 		D310AB651AA24EEF003AC370 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D310AB5D1AA24C0D003AC370 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -85,6 +87,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D305C7521AC9627B00B95990 /* LivingRoomLightsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingRoomLightsController.swift; sourceTree = "<group>"; };
+		D305C7571AC9651000B95990 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		D30DB3A01AA35A12008F8548 /* EditEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		D310AB551AA24C0D003AC370 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		D310AB691AA2573E003AC370 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/Source/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
@@ -150,6 +154,7 @@
 			children = (
 				D310AB6E1AA2693E003AC370 /* Router.swift */,
 				D3C554401AA407EE00A85CB4 /* Events.swift */,
+				D305C7571AC9651000B95990 /* Light.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */,
 				D30DB3A01AA35A12008F8548 /* EditEventViewController.swift */,
 				D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */,
+				D305C7521AC9627B00B95990 /* LivingRoomLightsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -377,6 +383,8 @@
 				D310AB6F1AA2693E003AC370 /* Router.swift in Sources */,
 				D310AB6D1AA26556003AC370 /* UIKitExtensions.swift in Sources */,
 				D38D34FC1A90FB0200BF47B9 /* EventCell.swift in Sources */,
+				D305C7531AC9627B00B95990 /* LivingRoomLightsController.swift in Sources */,
+				D305C7581AC9651000B95990 /* Light.swift in Sources */,
 				D30DB3A11AA35A12008F8548 /* EditEventViewController.swift in Sources */,
 				D310AB6A1AA2573E003AC370 /* SwiftyJSON.swift in Sources */,
 				D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */,
