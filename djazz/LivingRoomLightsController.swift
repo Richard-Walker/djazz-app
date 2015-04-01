@@ -8,53 +8,15 @@
 
 import UIKit
 
-class LightControl {
-    
-    var label: UILabel
-    var slider: UISlider
-    var stepper: UIStepper
-    
-    var level : Int {
-        return Int(round(slider.value))
-    }
-    
-    var format : String
-    
-    init(label: UILabel, slider: UISlider, stepper: UIStepper) {
-        self.label = label
-        self.slider = slider
-        self.stepper = stepper
-        self.format = label.text!
-        updateLabel()
-        
-        slider.addTarget(self, action: "sliderValueChanged", forControlEvents: .ValueChanged)
-        stepper.addTarget(self, action: "stepperValueChanged", forControlEvents: .ValueChanged)
-    }
-    
-    @objc
-    func sliderValueChanged() {
-        stepper.value = Double(slider.value)
-        updateLabel()
-    }
 
-    @objc
-    func stepperValueChanged() {
-        slider.setValue(Float(stepper.value), animated: true)
-        updateLabel()
-    }
-    
-    func updateLabel() {
-        label.text = String(format: format, level)
-    }
-}
-
-class LivingRoomLightsController: UIViewController {
+// TODO: Rename LivingRoomLightsController -> LivingRoomLightsViewController
+class LivingRoomLightsController: UIViewController, UILightControlDelegates {
 
     // MARK: - Properties -------------------------------------------------------------------
     
     /// The model of this view: lights things of the living room
-    var roomLight = Light(room: "livingroom", name: "room")
-    var moonsLight = Light(room: "livingroom", name: "moons")
+    var roomLightThing = LightThing(room: "livingroom", name: "room")
+    var moonsLightThing = LightThing(room: "livingroom", name: "moons")
     
     
     @IBOutlet weak var roomLightLabel: UILabel!
@@ -65,22 +27,32 @@ class LivingRoomLightsController: UIViewController {
     @IBOutlet weak var moonsLightSlider: UISlider!
     @IBOutlet weak var moonsLightStepper: UIStepper!
     
-    var roomLightControl: LightControl!
-    var moonsLightControl : LightControl!
+    var roomLightControl: UILightControl!
+    var moonsLightControl : UILightControl!
+
+    // MARK: - View load -------------------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        roomLightControl = LightControl(label: roomLightLabel, slider: roomLightSlider, stepper: roomLightStepper)
-        moonsLightControl = LightControl(label: moonsLightLabel, slider: moonsLightSlider, stepper: moonsLightStepper)
-        
         // Do any additional setup after loading the view.
         
-        roomLight.load()
-        moonsLight.load()
+        roomLightControl = UILightControl(label: roomLightLabel, slider: roomLightSlider, stepper: roomLightStepper, delegates: self)
+        moonsLightControl = UILightControl(label: moonsLightLabel, slider: moonsLightSlider, stepper: moonsLightStepper, delegates: self)
+        
+        roomLightThing.load()
+        moonsLightThing.load()
         
     }
 
+    
+    // MARK: - Protocol LightUIControlDeleguates -------------------------------------------------
+
+    func userChangedLightLevel(uiControl: UILightControl) {
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

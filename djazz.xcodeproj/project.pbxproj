@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D305C7531AC9627B00B95990 /* LivingRoomLightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305C7521AC9627B00B95990 /* LivingRoomLightsController.swift */; };
-		D305C7581AC9651000B95990 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305C7571AC9651000B95990 /* Light.swift */; };
+		D305C7581AC9651000B95990 /* LightThing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305C7571AC9651000B95990 /* LightThing.swift */; };
 		D30DB3A11AA35A12008F8548 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DB3A01AA35A12008F8548 /* EditEventViewController.swift */; };
 		D310AB641AA24EEF003AC370 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D310AB5D1AA24C0D003AC370 /* Alamofire.framework */; };
 		D310AB651AA24EEF003AC370 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D310AB5D1AA24C0D003AC370 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -18,6 +18,7 @@
 		D310AB711AA27C92003AC370 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB701AA27C92003AC370 /* FoundationExtensions.swift */; };
 		D38D34FA1A90F3FC00BF47B9 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */; };
 		D38D34FC1A90FB0200BF47B9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34FB1A90FB0200BF47B9 /* EventCell.swift */; };
+		D3A429DA1ACCA3C0003B44CD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A429D91ACCA3C0003B44CD /* Protocols.swift */; };
 		D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */; };
 		D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */; };
 		D3BF03AB1A8E744400BF0D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03A91A8E744400BF0D56 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		D3BF03B01A8E744400BF0D56 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03AE1A8E744400BF0D56 /* LaunchScreen.xib */; };
 		D3BF03BC1A8E744400BF0D56 /* djazzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03BB1A8E744400BF0D56 /* djazzTests.swift */; };
 		D3C554411AA407EE00A85CB4 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C554401AA407EE00A85CB4 /* Events.swift */; };
+		D3D5CB1D1ACBFB610035E869 /* UILightControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5CB1C1ACBFB610035E869 /* UILightControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +90,7 @@
 
 /* Begin PBXFileReference section */
 		D305C7521AC9627B00B95990 /* LivingRoomLightsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingRoomLightsController.swift; sourceTree = "<group>"; };
-		D305C7571AC9651000B95990 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		D305C7571AC9651000B95990 /* LightThing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightThing.swift; sourceTree = "<group>"; };
 		D30DB3A01AA35A12008F8548 /* EditEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		D310AB551AA24C0D003AC370 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		D310AB691AA2573E003AC370 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/Source/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
@@ -97,6 +99,7 @@
 		D310AB701AA27C92003AC370 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		D38D34FB1A90FB0200BF47B9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		D3A429D91ACCA3C0003B44CD /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D3BF039E1A8E744400BF0D56 /* djazz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djazz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BF03A21A8E744400BF0D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		D3BF03BA1A8E744400BF0D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BF03BB1A8E744400BF0D56 /* djazzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = djazzTests.swift; sourceTree = "<group>"; };
 		D3C554401AA407EE00A85CB4 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		D3D5CB1C1ACBFB610035E869 /* UILightControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILightControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +158,8 @@
 			children = (
 				D310AB6E1AA2693E003AC370 /* Router.swift */,
 				D3C554401AA407EE00A85CB4 /* Events.swift */,
-				D305C7571AC9651000B95990 /* Light.swift */,
+				D305C7571AC9651000B95990 /* LightThing.swift */,
+				D3A429D91ACCA3C0003B44CD /* Protocols.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			children = (
 				D38D34FB1A90FB0200BF47B9 /* EventCell.swift */,
 				D3BF03A91A8E744400BF0D56 /* Main.storyboard */,
+				D3D5CB1C1ACBFB610035E869 /* UILightControl.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -382,10 +388,12 @@
 				D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */,
 				D310AB6F1AA2693E003AC370 /* Router.swift in Sources */,
 				D310AB6D1AA26556003AC370 /* UIKitExtensions.swift in Sources */,
+				D3D5CB1D1ACBFB610035E869 /* UILightControl.swift in Sources */,
 				D38D34FC1A90FB0200BF47B9 /* EventCell.swift in Sources */,
 				D305C7531AC9627B00B95990 /* LivingRoomLightsController.swift in Sources */,
-				D305C7581AC9651000B95990 /* Light.swift in Sources */,
+				D305C7581AC9651000B95990 /* LightThing.swift in Sources */,
 				D30DB3A11AA35A12008F8548 /* EditEventViewController.swift in Sources */,
+				D3A429DA1ACCA3C0003B44CD /* Protocols.swift in Sources */,
 				D310AB6A1AA2573E003AC370 /* SwiftyJSON.swift in Sources */,
 				D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */,
 				D310AB711AA27C92003AC370 /* FoundationExtensions.swift in Sources */,

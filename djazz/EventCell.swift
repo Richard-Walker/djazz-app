@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol EventCellDelegate {
+protocol EventCellDelegates {
     func eventActivated(cell: EventCell)
     func eventDeactivated(cell: EventCell)
 }
@@ -23,7 +23,7 @@ class EventCell: UITableViewCell {
     
     var rowIndex : Int = 0
     
-    var deleguate: EventCellDelegate?
+    var deleguate: EventCellDelegates?
     
     var backgroundColorWhenActive: UIColor?
     

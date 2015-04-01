@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class EventsTableViewController: UITableViewController, UITableViewDataSource, EventCellDelegate, EventsModelDelegate {
+class EventsTableViewController: UITableViewController, UITableViewDataSource, EventCellDelegates, EventDelegates, NetworkDelegates {
     
     
     
@@ -20,7 +20,7 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
     
     
     
-    // MARK: - Protocol EventsModelDelegate -------------------------------------------------------------------
+    // MARK: - Protocol EventDelegates & NetworkDelegates ----------------------------------------------
     
     func eventHapenned(event: Event) {
         // An event has been triggered, we refresh the corresponding row in the view
@@ -40,7 +40,8 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         super.viewDidLoad()
         
         // Wire deleguates
-        events.delegate = self
+        events.delegates = self
+        events.netDelegates = self
         
         // Trick to not display empty cells
         self.tableView.tableFooterView = UIView(frame: CGRectZero)

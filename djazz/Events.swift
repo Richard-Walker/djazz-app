@@ -15,9 +15,8 @@ import AlamoFire
 
 // MARK: - Protocols -----------------------------------------------------------------------
 
-protocol EventsModelDelegate {
+protocol EventDelegates {
     func eventHapenned(event: Event)
-    func networkErrorOccurred(message:String, error: NSError)
 }
 
 
@@ -29,7 +28,8 @@ class Event: NSObject {
     // MARK: - properties
     
     // FIXME: align server interface to these names
-    var delegate : EventsModelDelegate?
+    var delegate : EventDelegates?
+    var netDelegates : NetworkDelegates?
     var index: Int?
     var id: String
     var name: String
@@ -40,13 +40,15 @@ class Event: NSObject {
     
     // MARK: - initialiser
     
-    init(_ id: NSString, _ name: String, _ enabled: Bool=false, _ time: NSDate=NSDate(), _ title: String="", delegate: EventsModelDelegate?=nil) {
-        self.id = id
-        self.name = name
-        self.enabled = enabled
-        self.time = time
-        self.title = title
-        self.delegate = delegate
+    init(_ id: NSString, _ name: String, _ enabled: Bool=false, _ time: NSDate=NSDate(), _ title: String="",
+        delegate: EventDelegates?=nil, netDelegates: NetworkDelegates? = nil) {
+        
+            self.id = id
+            self.name = name
+            self.enabled = enabled
+            self.time = time
+            self.title = title
+            self.delegate = delegate
     }
     
     // MARK: - methods that modify an event instance and sync it on djazz server
@@ -64,7 +66,7 @@ class Event: NSObject {
                 
 
             } else {
-                self.delegate?.networkErrorOccurred("Could not update event.", error: error!)
+                self.netDelegates?.networkErrorOccurred("Could not update event.", error: error!)
                 errorCallback?()
             }
         }
@@ -96,13 +98,15 @@ class Events {
     
     // MARK: - properties
     
-    var delegate: EventsModelDelegate?
+    var delegates: EventDelegates?
+    var netDelegates : NetworkDelegates?
     var eventList: [Event] = []
 
     // MARK: - initialiser
 
-    init(delegate: EventsModelDelegate? = nil) {
-        self.delegate = delegate
+    init(delegates: EventDelegates? = nil, netDelegates: NetworkDelegates? = nil) {
+        self.delegates = delegates
+        self.netDelegates = netDelegates
     }
 
     // MARK: - event list accessors & manipulators
@@ -129,13 +133,13 @@ class Events {
                     let enabled = json["enabled"].boolValue
                     let time = NSDate.parse(json["time"].stringValue)!
                     let title = json["title"].stringValue
-                    var e = Event(id, name, enabled, time, title, delegate: self.delegate)
+                    var e = Event(id, name, enabled, time, title, delegate: self.delegates, netDelegates: self.netDelegates)
                     self.append(e)
                 }
                 callback?()
 
             } else {
-                self.delegate?.networkErrorOccurred("Could not load events.", error: error!)
+                self.netDelegates?.networkErrorOccurred("Could not load events.", error: error!)
                 errorCallback?()
             }
         }
