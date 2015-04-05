@@ -9,6 +9,6 @@
 import Foundation
 
 protocol NetworkDelegates {
-    func networkErrorOccurred(message:String, error: NSError)
+    func networkErrorOccurred(message:String, error: NSError?)
 }
 

@@ -19,17 +19,22 @@ extension UIViewController {
     }
     
     /// Displays a modal error popup on the current view
-    func error(error:NSError, message: String) {
+    func error(error:NSError?, message: String) {
 
-        var title: String
-        switch error.domain {
-        case "NSURLErrorDomain":
-            title = "Network Error"
-        default:
-            title = "Error"
+        var title: String = "Error"
+        
+        if error != nil {
+            switch error!.domain {
+            case "NSURLErrorDomain":
+                title = "Network Error"
+            default:
+                title = "Error"
+            }
+            self.alert(title, message: "\n\(message)\n\n\(error!.localizedDescription)", buttonText: "Ok")
+        } else {
+            self.alert(title, message: "\n\(message)", buttonText: "Ok")
         }
         
-        self.alert(title, message: "\n\(message)\n\n\(error.localizedDescription)", buttonText: "Ok")
     }
     
 }

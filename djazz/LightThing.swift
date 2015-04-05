@@ -18,6 +18,7 @@ class LightThing {
     var room: String = ""
     var name: String = ""
     var netDelegates : NetworkDelegates?
+    var id: String?
     
     
     // MARK: - initialiser
@@ -31,63 +32,58 @@ class LightThing {
     
     // MARK: - methods that gets stuff from djazz server
     
-    // loads light level from server
+    // loads light level and id from server
     func load(callback: (()->())? = nil, errorCallback: (()->())? = nil) {
         
-        self.level = 10
-        callback?()
+        let filter =  "{\"room\":\"\(room)\",\"name\":\"\(name)\"}"
         
-        /*
-        Alamofire.request(.GET, Router.Events.url).validate().responseJSON() {
+        Alamofire.request(.GET, Router.Things.url, parameters: ["where":filter]).validate().responseJSON() {
             (_, _, data, error) in
             
             if error == nil {
-                for json in JSON(data!)["_items"].arrayValue {
-                    // We cannot use subscripts directly in the event initializer because of a bug in xcode (complie error)
-                    let id = json["_id"].stringValue
-                    let name = json["name"].stringValue
-                    let enabled = json["enabled"].boolValue
-                    let time = NSDate.parse(json["time"].stringValue)!
-                    let title = json["title"].stringValue
-                    var e = Event(id, name, enabled, time, title, delegate: self.delegate)
-                    self.append(e)
-                }
-                callback?()
+                let jsonItems = JSON(data!)["_items"].arrayValue
                 
+                if jsonItems.count == 0 {
+                    self.netDelegates?.networkErrorOccurred("Thing '\(self.name)' not found on server.", error: nil)
+                    errorCallback?()
+                    
+                } else {
+                    let json = jsonItems[0]
+                    // We cannot use subscripts directly in the event initializer because of a bug in xcode (complie error)
+                    self.id = json["_id"].stringValue
+                    self.level = json["state"]["level"].intValue
+
+                    callback?()
+                
+                }
             } else {
-                self.delegate?.networkErrorOccurred("Could not load events.", error: error!)
+                self.netDelegates?.networkErrorOccurred("Could not load light thing.", error: error!)
                 errorCallback?()
             }
+            
         }
-        */
         
     }
     
     
-    // MARK: - methods that modify an event instance and sync it on djazz server
+    // MARK: - methods that modify the state of a thing on djazz server
     
     func updateLevel(newLevel: Int, callback: (()->())? = nil, errorCallback: (()->())? = nil) {
         
-        self.level = newLevel;
-        callback?()
-
+        let updates = [ "state" : [ "level" : newLevel ] ]
         
-/*        Alamofire.request(.PATCH, Router.Event(self.id).url, parameters: updates.jsonSafe, encoding: .JSON).validate().responseJSON() {
+        Alamofire.request(.PATCH, Router.Thing(self.id!).url, parameters: updates, encoding: .JSON).validate().responseJSON() {
             (_, _, data, error) in
             
             if error == nil {
-                for (key,value) in updates {
-                    self.setValue(value, forKey: key)
-                }
+                self.level = newLevel
                 callback?()
-                
-                
             } else {
-                self.delegate?.networkErrorOccurred("Could not update event.", error: error!)
+                self.netDelegates?.networkErrorOccurred("Could not update light level.", error: error!)
                 errorCallback?()
             }
         }
-*/
+
     }
 
 

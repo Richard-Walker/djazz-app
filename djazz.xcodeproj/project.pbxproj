@@ -16,6 +16,7 @@
 		D310AB6D1AA26556003AC370 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB6C1AA26556003AC370 /* UIKitExtensions.swift */; };
 		D310AB6F1AA2693E003AC370 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB6E1AA2693E003AC370 /* Router.swift */; };
 		D310AB711AA27C92003AC370 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB701AA27C92003AC370 /* FoundationExtensions.swift */; };
+		D36CFAC91AD1F0B20077811D /* BedroomLightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */; };
 		D38D34FA1A90F3FC00BF47B9 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */; };
 		D38D34FC1A90FB0200BF47B9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34FB1A90FB0200BF47B9 /* EventCell.swift */; };
 		D3A429DA1ACCA3C0003B44CD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A429D91ACCA3C0003B44CD /* Protocols.swift */; };
@@ -97,6 +98,7 @@
 		D310AB6C1AA26556003AC370 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		D310AB6E1AA2693E003AC370 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D310AB701AA27C92003AC370 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BedroomLightsController.swift; sourceTree = "<group>"; };
 		D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		D38D34FB1A90FB0200BF47B9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		D3A429D91ACCA3C0003B44CD /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				D30DB3A01AA35A12008F8548 /* EditEventViewController.swift */,
 				D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */,
 				D305C7521AC9627B00B95990 /* LivingRoomLightsController.swift */,
+				D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */,
 				D310AB711AA27C92003AC370 /* FoundationExtensions.swift in Sources */,
 				D38D34FA1A90F3FC00BF47B9 /* EventsTableViewController.swift in Sources */,
+				D36CFAC91AD1F0B20077811D /* BedroomLightsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

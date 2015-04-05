@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ri0-gx-Lik">
-                                <rect key="frame" x="119" y="409" width="81" height="30"/>
+                                <rect key="frame" x="15" y="409" width="137.5" height="30"/>
                                 <state key="normal" title="Living room">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -61,17 +61,30 @@
                                     <segue destination="EDN-yY-Mxv" kind="push" id="LRE-qx-oGH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-LI-5US">
+                                <rect key="frame" x="167.5" y="409" width="137.5" height="30"/>
+                                <state key="normal" title="Bedroom">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vev-je-F9N" kind="push" id="3cx-Wg-rlk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="XjS-ss-WqF" secondAttribute="centerX" id="0mE-fA-IER"/>
-                            <constraint firstAttribute="centerX" secondItem="Ri0-gx-Lik" secondAttribute="centerX" id="8vO-ek-1Zt"/>
                             <constraint firstAttribute="centerX" secondItem="kbM-kq-jzV" secondAttribute="centerX" id="Dp4-qV-ImG"/>
+                            <constraint firstItem="hrA-LI-5US" firstAttribute="leading" secondItem="Ri0-gx-Lik" secondAttribute="trailing" constant="15" id="M8S-eb-dSU"/>
                             <constraint firstAttribute="centerY" secondItem="CwU-Ay-Jlq" secondAttribute="centerY" id="XdK-Kx-GMR"/>
+                            <constraint firstAttribute="trailing" secondItem="hrA-LI-5US" secondAttribute="trailing" constant="15" id="akR-D1-3K2"/>
+                            <constraint firstItem="Ri0-gx-Lik" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="15" id="bb0-pC-YME"/>
                             <constraint firstItem="CwU-Ay-Jlq" firstAttribute="top" secondItem="XjS-ss-WqF" secondAttribute="bottom" constant="50" id="dYq-2K-KSN"/>
                             <constraint firstItem="Ri0-gx-Lik" firstAttribute="top" secondItem="kbM-kq-jzV" secondAttribute="bottom" constant="15" id="hJ4-Ad-nN2"/>
+                            <constraint firstItem="hrA-LI-5US" firstAttribute="width" secondItem="Ri0-gx-Lik" secondAttribute="width" id="hdj-e4-skn"/>
                             <constraint firstItem="kbM-kq-jzV" firstAttribute="top" secondItem="CwU-Ay-Jlq" secondAttribute="bottom" constant="65" id="kT6-gf-Yak"/>
                             <constraint firstAttribute="centerX" secondItem="CwU-Ay-Jlq" secondAttribute="centerX" id="ksN-Rh-Zw3"/>
+                            <constraint firstItem="hrA-LI-5US" firstAttribute="top" secondItem="kbM-kq-jzV" secondAttribute="bottom" constant="15" id="psa-vH-B0d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="QY2-Yr-3VG"/>
@@ -92,10 +105,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-g6-EeT">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-g6-EeT">
                                 <rect key="frame" x="113" y="227" width="94" height="29"/>
                             </stepper>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="OGp-7s-cd9">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="OGp-7s-cd9">
                                 <rect key="frame" x="13" y="182" width="294" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room • %@" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYK-Hi-5DY">
@@ -103,10 +116,10 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-67-89a">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-67-89a">
                                 <rect key="frame" x="113" y="380" width="94" height="29"/>
                             </stepper>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6uU-Km-hy6">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6uU-Km-hy6">
                                 <rect key="frame" x="13" y="335" width="294" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moons • %@" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H0-Xx-YtX">
@@ -376,6 +389,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j43-kM-PFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="566"/>
+        </scene>
+        <!--Bedroom-->
+        <scene sceneID="C0Q-gx-bPE">
+            <objects>
+                <viewController id="vev-je-F9N" userLabel="Bedroom" customClass="BedroomLightsController" customModule="djazz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Pm-gc-Ojt"/>
+                        <viewControllerLayoutGuide type="bottom" id="lrM-f4-Ysa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DqK-AD-cF9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="m1O-pK-uFh">
+                                <rect key="frame" x="113" y="227" width="94" height="29"/>
+                            </stepper>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="cUf-bM-4IR">
+                                <rect key="frame" x="13" y="182" width="294" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room • %@" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3h-5q-W4n">
+                                <rect key="frame" x="15" y="143" width="290" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6du-aC-X10">
+                                <rect key="frame" x="134" y="79" width="52" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cUf-bM-4IR" secondAttribute="trailing" constant="15" id="8m8-Wa-cbh"/>
+                            <constraint firstItem="cUf-bM-4IR" firstAttribute="leading" secondItem="DqK-AD-cF9" secondAttribute="leading" constant="15" id="9zY-SO-b3N"/>
+                            <constraint firstItem="M3h-5q-W4n" firstAttribute="leading" secondItem="DqK-AD-cF9" secondAttribute="leading" constant="15" id="UWJ-vz-ce6"/>
+                            <constraint firstAttribute="centerX" secondItem="cUf-bM-4IR" secondAttribute="centerX" id="WXi-Lf-hYC"/>
+                            <constraint firstItem="6du-aC-X10" firstAttribute="top" secondItem="2Pm-gc-Ojt" secondAttribute="bottom" constant="15" id="XRO-h1-C8j"/>
+                            <constraint firstItem="cUf-bM-4IR" firstAttribute="top" secondItem="M3h-5q-W4n" secondAttribute="bottom" constant="15" id="b2w-U8-P4a"/>
+                            <constraint firstAttribute="centerX" secondItem="6du-aC-X10" secondAttribute="centerX" id="jZp-Xu-OyR"/>
+                            <constraint firstAttribute="trailing" secondItem="M3h-5q-W4n" secondAttribute="trailing" constant="15" id="mbl-1S-tbs"/>
+                            <constraint firstItem="m1O-pK-uFh" firstAttribute="top" secondItem="cUf-bM-4IR" secondAttribute="bottom" constant="15" id="pnL-2j-Ajr"/>
+                            <constraint firstAttribute="centerX" secondItem="6du-aC-X10" secondAttribute="centerX" id="qZB-t1-THu"/>
+                            <constraint firstItem="M3h-5q-W4n" firstAttribute="top" secondItem="6du-aC-X10" secondAttribute="bottom" constant="40" id="vAD-fa-cmd"/>
+                            <constraint firstAttribute="centerX" secondItem="m1O-pK-uFh" secondAttribute="centerX" id="vU8-P8-3f9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bedroom" id="7bN-pA-CcS"/>
+                    <connections>
+                        <outlet property="roomLightLabel" destination="M3h-5q-W4n" id="Acq-0o-lvX"/>
+                        <outlet property="roomLightSlider" destination="cUf-bM-4IR" id="31y-1L-M9n"/>
+                        <outlet property="roomLightStepper" destination="m1O-pK-uFh" id="Tgf-42-isg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81c-tY-Ged" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1293" y="-994"/>
         </scene>
     </scenes>
     <resources>

@@ -22,7 +22,6 @@ class UILightControl {
     var stepper: UIStepper
     var delegates: UILightControlDelegates?
     
-    
     var level : Int {
         get {
             return Int(stepper.value)
@@ -75,7 +74,8 @@ class UILightControl {
     
     @objc
     func stepperValueChanged() {
-        level = Int(stepper.value)
+        let step = stepper.stepValue
+        level = Int(round(stepper.value / step) * step)
     }
 
     @objc

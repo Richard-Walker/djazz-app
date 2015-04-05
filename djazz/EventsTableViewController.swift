@@ -27,7 +27,7 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: event.index!, inSection: 0)], withRowAnimation: .None)
     }
     
-    func networkErrorOccurred(message:String, error: NSError) {
+    func networkErrorOccurred(message:String, error: NSError?) {
         // A network error has occurred, we display a popup in the current view to inform the user
         self.error(error, message: message)
     }
@@ -47,7 +47,10 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         // Load events and refresh view when done
-        events.load { self.tableView!.reloadData() }
+        events.load {
+            self.tableView!.reloadData()
+            self.refreshBadge()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

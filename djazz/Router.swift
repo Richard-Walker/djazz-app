@@ -14,9 +14,8 @@ enum Router {
     case Root
     case Events
     case Event(String)
-    case Rooms
-    case LightThings(room: String)
-    case LightThing(room: String, thing: String)
+    case Things
+    case Thing(String)
     
     var url: String {
         
@@ -30,12 +29,10 @@ enum Router {
                 return "/events"
             case .Event(let event):
                 return "/events/\(event)"
-            case .Rooms:
-                return "/rooms"
-            case .LightThings(let room):
-                return "/rooms/\(room)"
-            case .LightThing(let room, let thing):
-                return "/rooms/\(room)/light-things/\(thing)"
+            case .Things:
+                return "/things"
+            case .Thing(let thing):
+                return "/things/\(thing)"
             }
         }()
  
