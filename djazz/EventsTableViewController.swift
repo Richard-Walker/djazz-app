@@ -18,13 +18,15 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
     /// The model of this view: a list of JSON events
     var events = Events()
     
-    
-    
     // MARK: - Protocol EventDelegates & NetworkDelegates ----------------------------------------------
     
     func eventHapenned(event: Event) {
-        // An event has been triggered, we refresh the corresponding row in the view
+        // Refresh the corresponding row in the view
         self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: event.index!, inSection: 0)], withRowAnimation: .None)
+
+        // Update the badge icon
+        self.setBadgeLabel()
+
     }
     
     func networkErrorOccurred(message:String, error: NSError?) {
@@ -47,8 +49,11 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         // Load events and refresh view when done
-        events.load { self.tableView!.reloadData() }
-
+        events.load {
+            self.tableView!.reloadData()
+            self.setBadgeLabel()
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -62,7 +67,13 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - View rendering functions -----------------------------------------------------------------
     
+    func setBadgeLabel() {
+        let count = events.countEnabled
+        navigationController?.tabBarItem.badgeValue = count==0 ? nil : String(count)
+    }
+
     
     // MARK: - Table view data source -------------------------------------------------------------------
     
@@ -113,6 +124,7 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         event.update(updates,
             {
                 cell.active = true
+                self.setBadgeLabel()
             } ,
             errorCallback: {
                 cell.active = false
@@ -133,6 +145,7 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         event.update(updates,
             {
                 cell.active = false
+                self.setBadgeLabel()
             } ,
             errorCallback: {
                 cell.active = true

@@ -16,6 +16,7 @@
 		D310AB6D1AA26556003AC370 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB6C1AA26556003AC370 /* UIKitExtensions.swift */; };
 		D310AB6F1AA2693E003AC370 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB6E1AA2693E003AC370 /* Router.swift */; };
 		D310AB711AA27C92003AC370 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB701AA27C92003AC370 /* FoundationExtensions.swift */; };
+		D356E5B11AD294B5001353DE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356E5B01AD294B5001353DE /* TabBarController.swift */; };
 		D36CFAC91AD1F0B20077811D /* BedroomLightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */; };
 		D38D34FA1A90F3FC00BF47B9 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */; };
 		D38D34FC1A90FB0200BF47B9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34FB1A90FB0200BF47B9 /* EventCell.swift */; };
@@ -98,6 +99,7 @@
 		D310AB6C1AA26556003AC370 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		D310AB6E1AA2693E003AC370 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D310AB701AA27C92003AC370 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		D356E5B01AD294B5001353DE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BedroomLightsController.swift; sourceTree = "<group>"; };
 		D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		D38D34FB1A90FB0200BF47B9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -159,9 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				D310AB6E1AA2693E003AC370 /* Router.swift */,
+				D3A429D91ACCA3C0003B44CD /* Protocols.swift */,
 				D3C554401AA407EE00A85CB4 /* Events.swift */,
 				D305C7571AC9651000B95990 /* LightThing.swift */,
-				D3A429D91ACCA3C0003B44CD /* Protocols.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -184,6 +186,7 @@
 				D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */,
 				D305C7521AC9627B00B95990 /* LivingRoomLightsController.swift */,
 				D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */,
+				D356E5B01AD294B5001353DE /* TabBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C554411AA407EE00A85CB4 /* Events.swift in Sources */,
+				D356E5B11AD294B5001353DE /* TabBarController.swift in Sources */,
 				D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */,
 				D310AB6F1AA2693E003AC370 /* Router.swift in Sources */,
 				D310AB6D1AA26556003AC370 /* UIKitExtensions.swift in Sources */,

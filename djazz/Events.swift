@@ -79,7 +79,7 @@ class Event: NSObject {
         timer.invalidate()
         if self.enabled {
             timer = NSTimer(fireDate: time, interval: 0, target: self, selector: Selector("timerFired:"), userInfo: nil, repeats: false)
-            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+            NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
         }
     }
     
@@ -114,6 +114,7 @@ class Events {
     subscript(index:Int) -> Event { return eventList[index] }
     subscript(id:String) -> Event? { return eventList.find { $0.id == id } }
     var count: Int { return eventList.count }
+    var countEnabled: Int { return eventList.filter({(e) in e.enabled}).count }
     func append(event: Event) { event.index = self.count; eventList.append(event) }
 
 
