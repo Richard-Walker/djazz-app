@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "djazz-icon-80.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "trumpet-100.png"
+      "filename" : "djazz-icon-120.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "djazz-icon-180-1.png"
     }
   ],
   "info" : {
