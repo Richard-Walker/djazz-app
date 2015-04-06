@@ -35,6 +35,7 @@ class BedroomLightsController: UIViewController, UILightControlDelegates, Networ
         
         roomLightThing.load {
             self.roomLightControl.level = self.roomLightThing.level
+            self.roomLightControl.enabled = true
         }
         
     }

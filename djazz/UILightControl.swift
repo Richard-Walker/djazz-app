@@ -50,6 +50,21 @@ class UILightControl {
         }
     }
     
+    var enabled : Bool {
+        get {
+            return stepper.enabled
+        }
+        set {
+            stepper.enabled = newValue
+            slider.enabled = newValue
+            if newValue == true {
+                (stepper.alpha, slider.alpha) = (1,1)
+            } else {
+                (stepper.alpha, slider.alpha) = (0.3,0.3)
+            }
+        }
+    }
+    
     var format : String
     
     init(label: UILabel, slider: UISlider, stepper: UIStepper, delegates: UILightControlDelegates?=nil) {
@@ -61,6 +76,8 @@ class UILightControl {
         self.delegates = delegates
         
         level = Int(stepper.value)
+        
+        self.enabled = false
         
         slider.addTarget(self, action: "sliderValueChanged", forControlEvents: .ValueChanged)
         stepper.addTarget(self, action: "stepperValueChanged", forControlEvents: .ValueChanged)

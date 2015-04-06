@@ -9,7 +9,7 @@
 //
 
 import Foundation
-import AlamoFire
+import Alamofire
 
 
 

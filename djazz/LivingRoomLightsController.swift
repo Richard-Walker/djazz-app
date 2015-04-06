@@ -52,10 +52,12 @@ class LivingRoomLightsController: UIViewController, UILightControlDelegates, Net
 
         roomLightThing.load {
             self.roomLightControl.level = self.roomLightThing.level
+            self.roomLightControl.enabled = true
         }
         
         moonsLightThing.load {
             self.moonsLightControl.level = self.moonsLightThing.level
+            self.moonsLightControl.enabled = true
         }
 
     }
