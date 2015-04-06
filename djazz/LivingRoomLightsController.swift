@@ -49,13 +49,13 @@ class LivingRoomLightsController: UIViewController, UILightControlDelegates, Net
         
         roomLightThing.netDelegates = self
         moonsLightThing.netDelegates = self
-        
-        moonsLightThing.load {
-            self.moonsLightControl.level = self.moonsLightThing.level
-        }
 
         roomLightThing.load {
             self.roomLightControl.level = self.roomLightThing.level
+        }
+        
+        moonsLightThing.load {
+            self.moonsLightControl.level = self.moonsLightThing.level
         }
 
     }

@@ -17,6 +17,9 @@ protocol UILightControlDelegates {
 
 class UILightControl {
     
+    var timer: NSTimer?
+    let timerTimeInterval: Double = 0.5
+    
     var label: UILabel
     var slider: UISlider
     var stepper: UIStepper
@@ -27,13 +30,13 @@ class UILightControl {
             return Int(stepper.value)
         }
         set {
-            stepper.value = Double(newValue)
             slider.setValue(Float(newValue), animated: true)
+            stepper.value = round(Double(newValue) / stepper.stepValue) * stepper.stepValue
             
-            if newValue == 0 {
+            if stepper.value == 0 {
                 label.text = String(format: format, "OFF")
             } else {
-                label.text = String(format: format, "\(newValue)%")
+                label.text = String(format: format, "\(Int(stepper.value))%")
             }
         }
     }
@@ -62,9 +65,9 @@ class UILightControl {
         slider.addTarget(self, action: "sliderValueChanged", forControlEvents: .ValueChanged)
         stepper.addTarget(self, action: "stepperValueChanged", forControlEvents: .ValueChanged)
         
-        slider.addTarget(self, action: "touchedUp", forControlEvents: .TouchUpInside | .TouchUpOutside)
-        stepper.addTarget(self, action: "touchedUp", forControlEvents: .TouchUpInside | .TouchUpOutside)
-
+        slider.addTarget(self, action: "sliderTouchedUp", forControlEvents: .TouchUpInside | .TouchUpOutside)
+        stepper.addTarget(self, action: "stepperTouchedUp", forControlEvents: .TouchUpInside | .TouchUpOutside)
+        
     }
     
     @objc
@@ -74,12 +77,25 @@ class UILightControl {
     
     @objc
     func stepperValueChanged() {
-        let step = stepper.stepValue
-        level = Int(round(stepper.value / step) * step)
+        //let step = stepper.stepValue
+        //level = Int(round(stepper.value / step) * step)
+        level = Int(stepper.value)
     }
 
     @objc
-    func touchedUp() {
+    func sliderTouchedUp() {
         userLevel = level
     }
+    
+    @objc
+    func stepperTouchedUp() {
+        timer?.invalidate()
+        timer = NSTimer.scheduledTimerWithTimeInterval(timerTimeInterval, target: self, selector: "timerFired", userInfo: nil, repeats: false)
+    }
+    
+    @objc
+    func timerFired() {
+        userLevel = level
+    }
+
 }

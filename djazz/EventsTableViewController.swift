@@ -47,10 +47,7 @@ class EventsTableViewController: UITableViewController, UITableViewDataSource, E
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         // Load events and refresh view when done
-        events.load {
-            self.tableView!.reloadData()
-            self.refreshBadge()
-        }
+        events.load { self.tableView!.reloadData() }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
