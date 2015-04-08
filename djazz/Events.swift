@@ -55,8 +55,8 @@ class Event: NSObject {
     
     func update(updates: [String:AnyObject], callback: (()->())? = nil, errorCallback: (()->())? = nil) {
         
-        Alamofire.request(.PATCH, Router.Event(self.id).url, parameters: updates.jsonSafe, encoding: .JSON).validate().responseJSON() {
-            (_, _, data, error) in
+        Networking.request(.PATCH, url: Router.Event(self.id).url, parameters: updates.jsonSafe) {
+            (data, error) in
             
             if error == nil {
                 for (key,value) in updates {
@@ -123,8 +123,8 @@ class Events {
     // loads event list from server
     func load(callback: (()->())? = nil, errorCallback: (()->())? = nil) {
         
-        Alamofire.request(.GET, Router.Events.url).validate().responseJSON() {
-            (_, _, data, error) in
+        Networking.request(.GET, url: Router.Events.url, parameters: nil) {
+            (data, error) in
             
             if error == nil {
                 for json in JSON(data!)["_items"].arrayValue {

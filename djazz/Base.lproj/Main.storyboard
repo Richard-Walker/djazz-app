@@ -38,22 +38,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="roofing" translatesAutoresizingMaskIntoConstraints="NO" id="XjS-ss-WqF">
-                                <rect key="frame" x="135" y="144" width="50" height="50"/>
+                                <rect key="frame" x="135" y="194" width="50" height="50"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trumpet" translatesAutoresizingMaskIntoConstraints="NO" id="CwU-Ay-Jlq">
-                                <rect key="frame" x="120" y="214" width="80" height="40"/>
+                                <rect key="frame" x="120" y="264" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xy6-wb-QAg"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D J A Z Z" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbM-kq-jzV">
-                                <rect key="frame" x="124" y="294" width="73" height="25"/>
+                                <rect key="frame" x="124" y="344" width="73" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ri0-gx-Lik">
-                                <rect key="frame" x="15" y="369" width="135" height="30"/>
+                                <rect key="frame" x="15" y="409" width="135" height="30"/>
                                 <state key="normal" title="Living room">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-LI-5US">
-                                <rect key="frame" x="170" y="369" width="134.5" height="30"/>
+                                <rect key="frame" x="170" y="409" width="134.5" height="30"/>
                                 <state key="normal" title="Bedroom">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -76,15 +76,15 @@
                             <constraint firstAttribute="centerX" secondItem="XjS-ss-WqF" secondAttribute="centerX" id="0mE-fA-IER"/>
                             <constraint firstAttribute="centerX" secondItem="kbM-kq-jzV" secondAttribute="centerX" id="Dp4-qV-ImG"/>
                             <constraint firstItem="hrA-LI-5US" firstAttribute="leading" secondItem="Ri0-gx-Lik" secondAttribute="trailing" constant="20" id="M8S-eb-dSU"/>
-                            <constraint firstAttribute="centerY" secondItem="CwU-Ay-Jlq" secondAttribute="centerY" constant="50" id="XdK-Kx-GMR"/>
+                            <constraint firstAttribute="centerY" secondItem="CwU-Ay-Jlq" secondAttribute="centerY" id="XdK-Kx-GMR"/>
                             <constraint firstAttribute="trailing" secondItem="hrA-LI-5US" secondAttribute="trailing" constant="15" id="akR-D1-3K2"/>
                             <constraint firstItem="Ri0-gx-Lik" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="15" id="bb0-pC-YME"/>
                             <constraint firstItem="CwU-Ay-Jlq" firstAttribute="top" secondItem="XjS-ss-WqF" secondAttribute="bottom" constant="20" id="dYq-2K-KSN"/>
-                            <constraint firstItem="Ri0-gx-Lik" firstAttribute="top" secondItem="kbM-kq-jzV" secondAttribute="bottom" constant="50" id="hJ4-Ad-nN2"/>
+                            <constraint firstItem="Ri0-gx-Lik" firstAttribute="top" secondItem="kbM-kq-jzV" secondAttribute="bottom" constant="40" id="hJ4-Ad-nN2"/>
                             <constraint firstItem="hrA-LI-5US" firstAttribute="width" secondItem="Ri0-gx-Lik" secondAttribute="width" id="hdj-e4-skn"/>
                             <constraint firstItem="kbM-kq-jzV" firstAttribute="top" secondItem="CwU-Ay-Jlq" secondAttribute="bottom" constant="40" id="kT6-gf-Yak"/>
                             <constraint firstAttribute="centerX" secondItem="CwU-Ay-Jlq" secondAttribute="centerX" id="ksN-Rh-Zw3"/>
-                            <constraint firstItem="hrA-LI-5US" firstAttribute="top" secondItem="kbM-kq-jzV" secondAttribute="bottom" constant="50" id="psa-vH-B0d"/>
+                            <constraint firstItem="hrA-LI-5US" firstAttribute="top" secondItem="kbM-kq-jzV" secondAttribute="bottom" constant="40" id="psa-vH-B0d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="QY2-Yr-3VG"/>

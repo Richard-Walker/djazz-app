@@ -37,8 +37,8 @@ class LightThing {
         
         let filter =  "{\"room\":\"\(room)\",\"name\":\"\(name)\"}"
         
-        Alamofire.request(.GET, Router.Things.url, parameters: ["where":filter]).validate().responseJSON() {
-            (_, _, data, error) in
+        Networking.request(.GET, url: Router.Things.url, parameters: ["where":filter]) {
+            (data, error) in
             
             if error == nil {
                 let jsonItems = JSON(data!)["_items"].arrayValue
@@ -68,12 +68,13 @@ class LightThing {
     
     // MARK: - methods that modify the state of a thing on djazz server
     
+    
     func updateLevel(newLevel: Int, callback: (()->())? = nil, errorCallback: (()->())? = nil) {
         
         let updates = [ "state" : [ "level" : newLevel ] ]
         
-        Alamofire.request(.PATCH, Router.Thing(self.id!).url, parameters: updates, encoding: .JSON).validate().responseJSON() {
-            (_, _, data, error) in
+        Networking.request(.PATCH, url: Router.Thing(self.id!).url, parameters: updates) {
+            (data, error) in
             
             if error == nil {
                 self.level = newLevel
@@ -83,9 +84,29 @@ class LightThing {
                 errorCallback?()
             }
         }
-
+        
     }
 
+    
+//    func updateLevel(newLevel: Int, callback: (()->())? = nil, errorCallback: (()->())? = nil) {
+//        
+//        let updates = [ "state" : [ "level" : newLevel ] ]
+//        
+//        Alamofire.request(.PATCH, Router.Thing(self.id!).url, parameters: updates, encoding: .JSON).validate().responseJSON() {
+//            (_, _, data, error) in
+//            
+//            if error == nil {
+//                self.level = newLevel
+//                callback?()
+//            } else {
+//                self.netDelegates?.networkErrorOccurred("Could not update light level.", error: error!)
+//                errorCallback?()
+//            }
+//        }
+//
+//    }
+
+    
 
     
     

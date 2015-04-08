@@ -16,11 +16,12 @@
 		D310AB6D1AA26556003AC370 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB6C1AA26556003AC370 /* UIKitExtensions.swift */; };
 		D310AB6F1AA2693E003AC370 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB6E1AA2693E003AC370 /* Router.swift */; };
 		D310AB711AA27C92003AC370 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310AB701AA27C92003AC370 /* FoundationExtensions.swift */; };
+		D32D689E1AD5CAEF000D31AD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32D689D1AD5CAEF000D31AD /* Reachability.swift */; };
+		D32D68A31AD5CEFC000D31AD /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32D68A21AD5CEFC000D31AD /* Networking.swift */; };
 		D356E5B11AD294B5001353DE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356E5B01AD294B5001353DE /* TabBarController.swift */; };
 		D36CFAC91AD1F0B20077811D /* BedroomLightsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */; };
 		D38D34FA1A90F3FC00BF47B9 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */; };
 		D38D34FC1A90FB0200BF47B9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D34FB1A90FB0200BF47B9 /* EventCell.swift */; };
-		D3A429DA1ACCA3C0003B44CD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A429D91ACCA3C0003B44CD /* Protocols.swift */; };
 		D3B072141AD2FE6E0056B25B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BF03AC1A8E744400BF0D56 /* Images.xcassets */; };
 		D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */; };
 		D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF03A51A8E744400BF0D56 /* HomeViewController.swift */; };
@@ -100,11 +101,12 @@
 		D310AB6C1AA26556003AC370 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		D310AB6E1AA2693E003AC370 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D310AB701AA27C92003AC370 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		D32D689D1AD5CAEF000D31AD /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		D32D68A21AD5CEFC000D31AD /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		D356E5B01AD294B5001353DE /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D36CFAC81AD1F0B20077811D /* BedroomLightsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BedroomLightsController.swift; sourceTree = "<group>"; };
 		D38D34F91A90F3FC00BF47B9 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		D38D34FB1A90FB0200BF47B9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		D3A429D91ACCA3C0003B44CD /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		D3BF039E1A8E744400BF0D56 /* djazz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djazz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BF03A21A8E744400BF0D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BF03A31A8E744400BF0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,8 @@
 			children = (
 				D310AB6C1AA26556003AC370 /* UIKitExtensions.swift */,
 				D310AB701AA27C92003AC370 /* FoundationExtensions.swift */,
+				D32D689D1AD5CAEF000D31AD /* Reachability.swift */,
+				D32D68A21AD5CEFC000D31AD /* Networking.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -162,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				D310AB6E1AA2693E003AC370 /* Router.swift */,
-				D3A429D91ACCA3C0003B44CD /* Protocols.swift */,
 				D3C554401AA407EE00A85CB4 /* Events.swift */,
 				D305C7571AC9651000B95990 /* LightThing.swift */,
 			);
@@ -396,14 +399,15 @@
 				D3C554411AA407EE00A85CB4 /* Events.swift in Sources */,
 				D356E5B11AD294B5001353DE /* TabBarController.swift in Sources */,
 				D3BF03A41A8E744400BF0D56 /* AppDelegate.swift in Sources */,
+				D32D68A31AD5CEFC000D31AD /* Networking.swift in Sources */,
 				D310AB6F1AA2693E003AC370 /* Router.swift in Sources */,
 				D310AB6D1AA26556003AC370 /* UIKitExtensions.swift in Sources */,
 				D3D5CB1D1ACBFB610035E869 /* UILightControl.swift in Sources */,
+				D32D689E1AD5CAEF000D31AD /* Reachability.swift in Sources */,
 				D38D34FC1A90FB0200BF47B9 /* EventCell.swift in Sources */,
 				D305C7531AC9627B00B95990 /* LivingRoomLightsController.swift in Sources */,
 				D305C7581AC9651000B95990 /* LightThing.swift in Sources */,
 				D30DB3A11AA35A12008F8548 /* EditEventViewController.swift in Sources */,
-				D3A429DA1ACCA3C0003B44CD /* Protocols.swift in Sources */,
 				D310AB6A1AA2573E003AC370 /* SwiftyJSON.swift in Sources */,
 				D3BF03A61A8E744400BF0D56 /* HomeViewController.swift in Sources */,
 				D310AB711AA27C92003AC370 /* FoundationExtensions.swift in Sources */,

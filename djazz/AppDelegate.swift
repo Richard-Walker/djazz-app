@@ -13,15 +13,16 @@ import Alamofire
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let networkTimeoutInterval : Double = 5
+    let networkTimeoutInterval : Double = 10
     
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        // Set timeout interval for requests with server
+        // Network configuration
         Alamofire.Manager.sharedInstance.session.configuration.timeoutIntervalForRequest = networkTimeoutInterval
+        Alamofire.Manager.sharedInstance.session.configuration.allowsCellularAccess = false
 
         return true
     }
